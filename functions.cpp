@@ -104,17 +104,15 @@ void HLL_method (int N, double adiabat, vector<vector<double>>& u, vector<vector
 
 // Creating auxiliary arrays
 
-    vector<vector<double>> tmp_u, F_star; //, F_star2;
+    vector<vector<double>> tmp_u, F_star;
 
     tmp_u.resize(3);
     F_star.resize(3);
-    // F_star2.resize(3);
 
     for (size_t var = 0; var < 3; ++var)
     {
         tmp_u[var].resize(N);       // the same size as the two-dimensional vector u[][]
-        F_star[var].resize(N + 1); // (N + 1) is the number of grid nodes
-        // F_star2[var].resize(N + 1); 
+        F_star[var].resize(N + 1);  // (N + 1) is the number of grid nodes
     }
 
 // Creating vectors to store wave propagation speeds (D_L, D_R), sound speed (s_vel) and flows (F_L, F_R)
@@ -137,7 +135,6 @@ void HLL_method (int N, double adiabat, vector<vector<double>>& u, vector<vector
 
 // Main function loop
 
-    int kh = 0;
     while (t <= time_res)
     {
     // The input of the function was u and F, transform them into primitive variables and place them
@@ -205,10 +202,5 @@ void HLL_method (int N, double adiabat, vector<vector<double>>& u, vector<vector
 
     // Updating the time counter
         t += dt;
-
-        kh++;
-
-        // if (kh > 0)
-        //    break;
     }
 }
