@@ -5,7 +5,7 @@ while (True):
     res_num = input("Choose a test!\nPossible input options: 1, 2, 3\n")
 
     if res_num == "1" or res_num == "2" or res_num == "3":
-        filename = "./input/input" + res_num + ".txt" # works when launched from the math_task_2 folder
+        filename = "./input/input" + res_num + ".txt"
         
         try:
             with open(filename, 'r') as file:
